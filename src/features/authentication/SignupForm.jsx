@@ -28,6 +28,7 @@ function SignupForm() {
           type="text"
           id="fullName"
           {...register('fullName', { required: 'This field is required' })}
+          disabled={isSigningUp}
         />
       </FormRow>
 
@@ -42,6 +43,7 @@ function SignupForm() {
               message: 'Please provide a valid email address',
             },
           })}
+          disabled={isSigningUp}
         />
       </FormRow>
 
@@ -59,6 +61,7 @@ function SignupForm() {
               message: 'Password must be at least 8 characters long',
             },
           })}
+          disabled={isSigningUp}
         />
       </FormRow>
 
@@ -71,6 +74,7 @@ function SignupForm() {
             validate: (value) =>
               value === getValues().password || 'Passwords need to match',
           })}
+          disabled={isSigningUp}
         />
       </FormRow>
 
@@ -79,7 +83,7 @@ function SignupForm() {
         <Button variation="secondary" type="reset">
           Cancel
         </Button>
-        <Button>Create new user</Button>
+        <Button disabled={isSigningUp}>Create new user</Button>
       </FormRow>
     </Form>
   );
