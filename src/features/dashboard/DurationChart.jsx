@@ -37,7 +37,7 @@ const startDataLight = [
   {
     duration: '2 nights',
     value: 0,
-    color: '#f97316',
+    color: '#1674f9',
   },
   {
     duration: '3 nights',
@@ -80,7 +80,7 @@ const startDataDark = [
   {
     duration: '2 nights',
     value: 0,
-    color: '#c2410c',
+    color: '#0f73e6',
   },
   {
     duration: '3 nights',
@@ -143,7 +143,7 @@ function prepareData(startData, stays) {
 
 function DurationChart({ confirmedStays }) {
   const { isDarkMode } = useDarkMode();
-  const preparedData = isDarkMode ? startDataDark : startDataLight;
+  const preparedData = !isDarkMode ? startDataLight : startDataDark;
   const data = prepareData(preparedData, confirmedStays);
 
   return (
